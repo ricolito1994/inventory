@@ -1,0 +1,79 @@
+<div data-controller="itemmasterdata" class="container-page itemmasterdata">
+	<div class="container-page-container">
+		<div class="heading">
+			Item Master Data
+		</div>
+		<div class="content" style="overflow-y:hidden">
+			<div class="dt-table-filter" >
+				<div class="col-md-12" style="border:1px solid #ccc; padding :1%;width:100%;">
+					<div class="row">
+						<div class="row col-md-9" id="dttablefilter">
+							<div class="col-sm-3">
+								Item Name<br>
+								<input type="text" class="form-control" data-valuectrl="itemmasterdata.itemname" placeholder="Enter item name..." data-event="itemmasterdata.change.changefilter" />
+							</div>
+							<div class="col-sm-3">
+								<!--<select id='depts' type="text" class="form-control" data-valuectrl="employeeprofile.department" placeholder="Department" data-event="employeeprofile.change.changefilter" />
+								
+								</select>-->
+								Category<br>
+								<!--<select type='text' id='depts' type="text" class="form-control" data-valuectrl="itemmasterdata.critlevel" placeholder="Supplier" data-event="itemmasterdata.change.changefilter" />
+									<option value="">All</option>
+									<option value="critlevel">Critical Level</option>
+								</select>-->
+								<select class="form-control" id="item-master-data-search-category" data-event="itemmasterdata.change.changefilter" data-valuectrl="itemmasterdata.category">
+									<option value="1">ALL ITEMS</option>
+									<option value="2">FOOD/BEVERAGE</option>
+									<option value="3">CREAM</option>
+									<option value="4">DISPOSABLES</option>
+									<option value="5">CREAM/OINTMENT</option>
+									<option value="6">MEDICINE</option>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<!--<select id='depts' type="text" class="form-control" data-valuectrl="employeeprofile.department" placeholder="Department" data-event="employeeprofile.change.changefilter" />
+								
+								</select>-->
+								Price<br>
+								<!--<select type='text' id='depts' type="text" class="form-control" data-valuectrl="itemmasterdata.expired" placeholder="Supplier" data-event="itemmasterdata.change.changefilter" />
+									<option value="">All</option>
+									<option value="expired">With Expired Items</option>
+								</select>-->
+								<input type="text" class="form-control" data-event="itemmasterdata.change.changefilter" data-valuectrl="itemmasterdata.price"/>
+							</div>
+							<div class="col-sm-3">
+								<!--<select id='depts' type="text" class="form-control" data-valuectrl="employeeprofile.department" placeholder="Department" data-event="employeeprofile.change.changefilter" />
+								
+								</select>-->
+								<!--<select type='text' id='depts' type="text" class="form-control" data-valuectrl="itemmasterdata.expired" placeholder="Supplier" data-event="itemmasterdata.change.changefilter" />
+									<option value="">All</option>
+									<option value="expired">With Expired Items</option>
+								</select>-->
+								Supplier <br>
+								<input data-event='itemmasterdata.click.openSupplier' data-valuectrl='itemmasterdata.supplier' type='text' class='form-control'/>
+							</div>
+						</div>
+						<div class="row col-md-3 action-buttons">
+							<button data-event="itemmasterdata.click.allitems" class="btn btn-warning">
+								<b><i class="icon-refresh"></i> Refresh Table</b>
+							</button>&nbsp;
+							
+							<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<b><i class="icon-caret-down"></i> Actions</b>
+							</button>&nbsp;
+							<div class="dropdown-menu" id="dt-dp-actions">
+								<a data-event="itemmasterdata.click.openitem" href="javascript:void(0);" class="dropdown-item"><b>New Item</b></a>
+								<a data-event="itemmasterdata.click.allitems" href="javascript:void(0);" class="dropdown-item"><b>All Items</b></a>
+								<a data-event="itemmasterdata.click.inventoryInStock" href="javascript:void(0);" class="dropdown-item"><b>Inventory In Stock</b></a>
+								<a data-event="itemmasterdata.click.expiryInStock" href="javascript:void(0);" class="dropdown-item"><b>Expiry In Stock</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height:100%;" class="item-masterdata-table">
+				<div id="dt-table"></div>
+			</div>
+		</div>
+	</div>
+</div>

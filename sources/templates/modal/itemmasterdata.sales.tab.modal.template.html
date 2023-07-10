@@ -1,0 +1,37 @@
+<div id='item-sales-tab' data-controller='itemsalescontroller'  >
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:hidden;">
+		<div id='general-information' style="height:100%;" data-idlink='gen-info' class="spm-panels scroll-content" >
+			<div class="spm-heads">
+				Item Price List
+			</div>
+			<div class="spm-content" >
+				<div class='row'>
+					<div class='col-md-12' >
+						
+						<div style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'>Document Date</em></div>
+								<div class='col-md-4' >From <br><input data-event='itemsalescontroller.change.changefilter' data-valuectrl='dfrm' type='date' class='form-control'/></div>
+								<div class='col-md-4' >To<br><input data-event='itemsalescontroller.change.changefilter' data-valuectrl='dtoo' type='date' class='form-control'/></div>	
+								
+							</div>
+						</div>
+						<div style='border:1px solid #ccc;padding:1%;height:123%;'>
+							<div style="height:100%;" class="item-sales-table">
+								<div id="dt-table"></div>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>	
+	</div>
+	<br>
+	<!--<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemstockcardcontroller.click.printStockCard">
+			<i class="icon-print"></i> Print Stock Card
+		</button>			
+	</div>-->
+</div>

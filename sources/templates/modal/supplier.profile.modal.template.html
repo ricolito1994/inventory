@@ -1,0 +1,50 @@
+<div id='supplier-profile-tab' data-controller='supplierprofile'  >
+	
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:auto;">
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content">
+			<div class="spm-heads">
+				Business Partner Information
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-2'>
+						<img data-valuectrl='supplierprofile.IMG' id='profilepic' style='width:100%;border:1px solid #ccc;'><br>
+						
+					</div>
+					<div class='col-md-10'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'>Business Partner Information</em></div>
+								<div class='col-md-4'>Business Partner No. <br><input data-valuectrl='supplierprofile.SUPPLIER_CODE' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Business Partner Name <br><input data-valuectrl='supplierprofile.SUPPLIER_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Account Code <br><input data-valuectrl='supplierprofile.ACCOUNT_CODE' type='text' class='form-control'/></div>
+								<div class='col-md-4'><br>Description <br><textarea style='resize:none;height:15vh;' data-valuectrl='supplierprofile.DESCRIPTION' type='text' class='form-control'> </textarea></div>						
+								<div class='col-md-4'><br>Address <br><input data-valuectrl='supplierprofile.SUPPLIER_ADDRESS' type='text' class='form-control'/></div>
+								<div class='col-md-4'><br>Business Partner Type <br>
+									<select data-valuectrl='supplierprofile.TYPE' type='text' class='form-control'>
+										<option>Customer</option>
+										<option>Supplier</option>
+									</select>
+								</div>
+							
+							</div>
+													
+						</div>
+						
+												
+					</div>
+											
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+			
+	</div>
+	<br>
+	<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemprofilecontroller.click.save">
+			<i class="icon-download"></i> Save</button>			
+		
+	</div>
+</div>

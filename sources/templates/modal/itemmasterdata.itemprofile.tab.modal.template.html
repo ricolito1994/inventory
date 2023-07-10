@@ -1,0 +1,93 @@
+<div id='item-profile-tab' data-controller='itemprofilecontroller'  >
+	
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:auto;">
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content">
+			<div class="spm-heads">
+				Item Information
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-2'>
+						<!--<img data-valuectrl='itemprofile.ITEM_IMAGE' id='profilepic' style='width:100%;border:1px solid #ccc;'><br>-->
+						
+						<input type='image' id='itemimage' data-event='itemprofilecontroller.click.chooselogo' data-valuectrl='itemtemppic'  style='width:100%;' />
+						<input id='itemimage_pic' data-valuectrl='itemprofile.ITEM_IMAGE' data-event='itemprofilecontroller.change.churchprofpicchange' accept="image/png, image/gif, image/jpeg" type='file' style='display:none;' class='form-control' placeholder='choose your profile picture' />
+				
+						
+						
+					</div>
+					<div class='col-md-10'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'>Item Details</em></div>
+								<div class='col-md-4'>Item No. <br><input data-valuectrl='itemprofile.ITEM_CODE' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Item Name <br><input data-valuectrl='itemprofile.ITEM_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Supplier <br><input data-event='itemprofilecontroller.click.openSupplier' data-valuectrl='itemprofile.SUPPLIER_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-4'><br>Item Description <br><textarea style='resize:none;height:15vh;' data-valuectrl='itemprofile.ITEM_DESCRIPTION' type='text' class='form-control'> </textarea></div>	
+								<div class='col-md-4'><BR> CATEGORY <br>
+									<select data-valuectrl='itemprofile.CATEGORY' type='text' class='form-control' id="item-category"/>
+									</select>
+								</div>
+													
+								<!--<div class='col-md-4'><br>Expiry Date <br><input data-valuectrl='itemprofile.EXPIRY_DATE' type='date' class='form-control'/></div>-->
+								<!--<div class='col-md-4'><br>Alert Qty. (Minimum Qty.) <br><input data-valuectrl='itemprofile.ALERT_QTY' type='text' class='form-control'/></div>
+								<div class='col-md-4'><br>Alert Expiry Before Months <br><input data-valuectrl='itemprofile.ALERT_BEFORE_EXPIRY' type='text' class='form-control'/></div>-->
+							
+							</div>
+													
+						</div>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'>Base Unit</em></div>
+								<div class='col-md-4' >Unit <br><input data-event='itemprofilecontroller.keyup.changeunitvalues' data-valuectrl='unitConversions.0.UNIT_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-4' >Cost / Quantity <br><input data-event='itemprofilecontroller.keyup.changeunitvalues' data-valuectrl='unitConversions.0.COST_PER_UNIT' type='text' class='form-control'/></div>	
+								<div class='col-md-4' >Selling Price / Quantity <br><input data-event='itemprofilecontroller.keyup.changeunitvalues' data-valuectrl='unitConversions.0.SELLING_PRICE_PER_UNIT' type='text' class='form-control'/></div>	
+							
+							 </div>
+						</div>
+						
+						<!--<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-2'><em style='font-size:2vh;'>Item Sub Unit</em></div>
+								<div class='col-md-6'> <button class='btn btn-success' data-event='itemprofilecontroller.click.addUnit'> add new </button></div>
+								
+								<div class='col-md-12'>
+									<br>
+									<table class='table' id='item-profile-modal-unit-table'>
+										<thead>
+											<tr>
+												<th>Unit Identification</th>
+												<th>Qty.</th>
+												<th>Unit is Equal To</th>
+												<th>Qty. Parent Unit</th>
+												<th>Cost/Qty.</th>
+												<th>Selling Price/Qty.</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+										
+										</tbody>
+									</table>
+								</div>
+								
+								
+							</div>
+						</div>-->
+												
+					</div>
+											
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+			
+	</div>
+	<br>
+	<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemprofilecontroller.click.save">
+			<i class="icon-download"></i> Save</button>			
+		
+	</div>
+</div>

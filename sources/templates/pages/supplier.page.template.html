@@ -1,0 +1,56 @@
+<div data-controller="supplier" class="container-page supplier">
+	<div class="container-page-container">
+		<div class="heading">
+			Business Partners
+		</div>
+		<div class="content" style="overflow-y:hidden">
+			<div class="dt-table-filter" >
+				<div class="col-md-12" style="border:1px solid #ccc; padding :1%;width:100%;">
+					<div class="row">
+						<div class="row col-md-9" id="dttablefilter">
+							<div class="col-sm-4">
+								<input type="text" class="form-control" data-valuectrl="supplier.suppliername" placeholder="Enter supplier name..." data-event="supplier.change.changefilter" />
+							</div>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" data-valuectrl="supplier.address" placeholder="Enter supplier address..." data-event="supplier.change.changefilter" />
+							</div>
+							<div class="col-sm-4">
+								<select type="text" class="form-control" data-valuectrl="supplier.type"  data-event="supplier.change.changefilter" >
+									<option value=''>All</option>
+									<option >Customer</option>
+									<option >Supplier</option>
+								</select>
+							</div>
+							<!--<div class="col-sm-6">
+								<select id='depts' type="text" class="form-control" data-valuectrl="employeeprofile.department" placeholder="Department" data-event="employeeprofile.change.changefilter" />
+								
+								</select>
+								
+								<input type='text' id='depts' type="text" class="form-control" data-valuectrl="itemmasterdata.suppliername" placeholder="Supplier" data-event="itemmasterdata.click.opensupplier" />
+								
+								
+							</div>>-->
+							
+						</div>
+						<div class="row col-md-3 action-buttons">
+							<button data-event="datatable.click.destroyTable" class="btn btn-warning">
+								<b><i class="icon-refresh"></i> Refresh Table</b>
+							</button>&nbsp;
+							
+							<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<b><i class="icon-caret-down"></i> Actions</b>
+							</button>&nbsp;
+							<div class="dropdown-menu" id="dt-dp-actions">
+								<a data-event="supplier.click.opensupplier" href="javascript:void(0);" class="dropdown-item"><b>+ Business Partner</b></a>
+								<a data-event="supplier.click.allsuppliers" href="javascript:void(0);" class="dropdown-item"><b>All Business Partners</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height:100%;" class="item-masterdata-table">
+				<div id="dt-table"></div>
+			</div>
+		</div>
+	</div>
+</div>

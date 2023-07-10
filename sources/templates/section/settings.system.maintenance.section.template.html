@@ -1,0 +1,72 @@
+<div id="sysytemmaintenance"   data-controller='sysytemmaintenance' style='height:100%;overflow:hidden;'>
+	<div style='height:100%;overflow-x:hidden;overdlow-y:auto;padding:1%;'> 
+		<div><h5>System Maintenance</h5></div>
+		
+		<div class='row'>
+			<div class='col-md-12' style='margin-top:1%;'>
+				<H2>BACK UP DATABASE</H2>
+				
+			</div>
+			<div class='col-md-12' style='margin-top:1%;margin-left:1%;'>
+				<H5>Choose database to backup </H5>
+				
+			</div>
+			
+			<div class='col-md-12' style='margin-top:1%;margin-left:1%;'>
+				<ul>
+					<li><label><input data-valuectrl='db_to_backup.inventory' type='checkbox' /> Inventory</label></li>
+					
+				</ul>
+			</div>
+			
+			<div class='col-md-3' style='margin-top:1%;margin-left:1%;'>
+				Set Time of daily backup <input data-valuectrl='back_up_time' type='time' class='form-control' />
+			
+			</div>
+			
+			<div class='col-md-3' style='margin-top:1%;margin-left:1%;'>
+				Is Auto backup running now 
+				<select data-valuectrl='is_auto_backup_running' type='time' class='form-control' >
+					<option value='1'>Yes</option>
+					<option value='0'>No</option>
+				</select>
+			</div>
+			
+			<div class='col-md-12' style='margin-top:2%;margin-left:1%;'>
+				<button class='btn btn-primary' data-event='systemmaintenance.click.runBackUpDatabase'>Back up Now!</button> 
+				<button class='btn btn-primary' data-event='systemmaintenance.click.runAutomaticBackup'>Run Automatic Backup</button>
+				<button class='btn btn-primary' data-event='systemmaintenance.click.saveBackupSetting'>Save Setting</button>
+			</div>
+		</div>
+		<br>
+		<Hr>
+		
+		<div class='row'>
+			<div class='col-md-12' style='margin-top:1%;'>
+				<H2>RESTORE DATABASE</H2>
+				
+			</div>
+			<div class='col-md-12' style='margin-top:1%;margin-left:1%;'>
+				<H5>Choose file to restore </H5>
+				
+			</div>
+			
+			
+			<div class='col-md-3' style='margin-top:2%;margin-left:1%;'>
+				<input id="file_to_restore" type='file' class='form-control' accept="zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed"/>
+				<br><i>Please only select zip files</i>
+				<p>
+					<i><b>Important!</b> you need to schedule this process to your free time!</i>
+				</p>
+			</div>
+			
+			<div class='col-md-12' style='margin-top:2%;margin-left:1%;'>
+				<button class='btn btn-primary' data-event='systemmaintenance.click.restoreDB'>Restore DB</button> 
+				
+			</div>
+		</div>
+		
+
+	</div>
+	
+</div>

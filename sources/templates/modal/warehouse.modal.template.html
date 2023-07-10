@@ -1,0 +1,47 @@
+<div id="warehousemodal"  class="modal fade modals-lg" data-backdrop="static"  data-keyboard="false" tabindex='-1'   data-controller='warehousemodal'>
+	<div class="modal-dialog">
+		<div class="modal-content" style='overflow:hidden;'>
+	      <!-- Modal Header -->
+		  <div class="modal-header basic">
+			<h4 class="modal-title">Supplier Profile</h4>
+			<button type="button" class="close" data-event="warehousemodal.click.onClose">&times;</button>
+		  </div>
+		  <!-- Modal body -->
+		  <div class="modal-body row">
+			<div class="col-md-12 modal-forms" id="form-special-subject-modal">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a data-params='{"navigate":"warehouseprofile"}' data-event="warehousemodal.click.navigate" class="nav-link active" data-toggle="tab" href="#itemprofiletab">Warehouse Profile</a>
+					</li>
+					
+					
+					<li class="nav-item ">
+						<a data-params='{"navigate":"stockinwarehouse"}' data-event="warehousemodal.click.navigate" class="nav-link" id='specsubtab' data-toggle="tab" href="#employeepayslip_tab">Items on Warehouse</a>
+					</li>
+					
+					<li class="nav-item ">
+						<a data-params='{"navigate":"itemdocuments"}' data-event="warehousemodal.click.navigate" class="nav-link" id='specsubtab' data-toggle="tab" href="#employeepayslip_tab"> Documents</a>
+					</li>
+					
+				</ul>
+				<div class="tab-content" style="height:100%;">
+					<div id='warehousetab'  class="tab-pane content active" style="padding:1% 0% 1% 0%;height:100%;">
+						
+					</div>
+					<div  id='employeeattendance_tab'  class="tab-pane content" style="padding:1% 0% 1% 0%;height:100%;">
+						
+					</div>
+					<div  id='employeeclearance_tab'  class="tab-pane content" style="padding:1% 0% 1% 0%;height:100%;">
+						
+					</div>
+					
+					<div  id='employeepayslip_tab'  class="tab-pane content" style="padding:1% 0% 1% 0%;height:100%;">
+						
+					</div>
+				</div>
+			</div>
+		  </div>
+		 
+		</div>	
+	</div>
+</div>

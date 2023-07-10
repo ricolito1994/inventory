@@ -1,0 +1,69 @@
+<div data-controller="transaction" class="container-page transaction">
+	<div class="container-page-container">
+		<div class="heading">
+			Transactions
+		</div>
+		<div class="content" style="overflow-y:hidden">
+			<div class="dt-table-filter" >
+				<div class="col-md-12" style="border:1px solid #ccc; padding :1%;width:100%;">
+					<div class="row">
+						<div class="row col-md-11" id="dttablefilter">
+							<div class="col-sm-4">
+								DOC ID
+								<input type="text" class="form-control" data-valuectrl="DOC_ID" placeholder="Enter DOC ID..." data-event="transaction.change.changefilter" />
+							</div>
+							<div class="col-sm-2">
+								DOC TYPE
+								<select class="form-control" data-valuectrl="DOC_TYPE" placeholder="Address" data-event="transaction.change.changefilter" />
+									<option value=''>All</option>
+									<option >Delivery</option>
+									<option >Return from Customer</option>
+									<!--<option >Return Stocks</option>-->
+									<option >Return to Supplier</option>
+									<!--<option >Reversal</option>-->
+								</select>
+							</div>
+							
+							<div class="col-sm-2">
+								STATUS
+								<select class="form-control" data-valuectrl="STATUS" placeholder="Address" data-event="transaction.change.changefilter" />
+									<option value=''>All</option>
+									<option >Open</option>
+									<option >Close</option>
+									<option >Cancelled</option>
+								</select>
+							</div>
+							
+							
+							<div class="col-sm-2">
+								Doc Date frm <input type="date" class="form-control" data-valuectrl="ENCODED_DATE" data-event="transaction.change.changefilter" />
+							</div>
+							
+							<div class="col-sm-2">
+								Doc Date to <input type="date" class="form-control" data-valuectrl="DOC_DATE" data-event="transaction.change.changefilter" />
+							</div>
+							
+						</div>
+						<div class="row col-md-1 action-buttons" style='padding:0;'>
+							
+							&nbsp;
+							<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<b><i class="icon-caret-down"></i> Actions</b>
+							</button>&nbsp;
+							<div class="dropdown-menu dropdown-menu-right" id="dt-dp-actions">
+								<a data-event="transaction.click.newTransaction" data-params='{"TYPE":"Delivery","STOCK_IN_OUT":"1"}' href="javascript:void(0);" class="dropdown-item"><b>+ Delivery</b></a>
+								<a data-event="transaction.click.newTransaction" data-params='{"TYPE":"Return by Customer","STOCK_IN_OUT":"1"}' href="javascript:void(0);" class="dropdown-item"><b>+ Return from Customer</b></a>
+								<a data-event="transaction.click.newTransaction" data-params='{"TYPE":"Return to Supplier","STOCK_IN_OUT":"0"}' href="javascript:void(0);" class="dropdown-item"><b>+ Return to Supplier</b></a>
+								<!-- <a data-event="transaction.click.newTransaction" data-params='{"TYPE":"Reversal","STOCK_IN_OUT":"0"}' href="javascript:void(0);" class="dropdown-item"><b>+ Reversal</b></a>
+							 -->
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height:100%;" class="item-masterdata-table">
+				<div id="dt-table"></div>
+			</div>
+		</div>
+	</div>
+</div>

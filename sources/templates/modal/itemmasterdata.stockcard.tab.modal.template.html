@@ -1,0 +1,73 @@
+<div id='item-stockcard-tab' data-controller='itemstockcardcontroller'  >
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:auto;">
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content" >
+			<div class="spm-heads">
+				Item Stock Card - item movement monitoring.
+			</div>
+			<div class="spm-content" >
+				<div class='row'>
+					<div class='col-md-12' >
+						
+						<div style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-3' >From <br><input data-event='itemstockcardcontroller.change.changefilter' data-valuectrl='dfrm' type='date' class='form-control'/></div>
+								<div class='col-md-3' >To<br><input data-event='itemstockcardcontroller.change.changefilter' data-valuectrl='dtoo' type='date' class='form-control'/></div>	
+								
+								<div class='col-md-3' >Unit Total<br>
+									<SELECT data-event='itemstockcardcontroller.change.changefilter' data-valuectrl='unittotal' id="unit-total" type='date' class='form-control'>
+										
+									</select>
+								</div>
+								<div class='col-md-3' >Expiry date<br>
+									<SELECT data-event='itemstockcardcontroller.change.changefilter' data-valuectrl='expdate' id="expiry_dates"  class='form-control'>
+										
+									</select>
+								</div>									
+							</div>
+						</div>
+						<div style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'>
+									<span data-valuectrl='itemname' style='font-weight:bold;font-size:2vh;'></span>
+									<table class='table' id='stockcardtable' style="margin-top:1%;">
+										<thead>
+											<tr>
+												<th>-</th>
+												<th>Document</th>
+												<th>Doc Type</th>
+												<th>Doc Date</th>
+												<th>LOT NO.</th>
+												<th>Expiry Date</th>
+												<th>Status</th>
+												<th>Customer</th>
+												<th>UNIT</th>
+												<th>DEAL</th>
+												<th>REGULAR</th>
+												<th style="width:140px;">QTY</th>
+												<!--<th>M</th>-->
+												<th>TOTAL</th>
+												<th>UNIT</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<!--<div style="height:100%;" class="stockcardtable">
+										<div id="dt-table"></div>
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>	
+	</div>
+	<br>
+	<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemstockcardcontroller.click.printStockCard">
+			<i class="icon-print"></i> Print Stock Card
+		</button>			
+	</div>
+</div>

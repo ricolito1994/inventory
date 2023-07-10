@@ -1,0 +1,102 @@
+<div data-controller="dashboard" class="container-page dashboard">
+	<div class="container-page-container">
+		<div class="heading">
+			Dashboard
+		</div>
+		<div class="content">
+			<div style='width:100%;height:100%;	overflow:hidden;'>
+				<div style='width:65%;float:left; max-height:100%; overflow-y:auto;'>
+					<div style='border-bottom:1px solid #cccc;padding-bottom:1%;'>
+						<div style='width:5%;float:left;' >
+							<img id='dashboard-profpic' src="sources/images/prof.jpg" style='width:100%;'  alt="Logo" >
+						</div>
+						<div style='width:70%;float:left;'>
+							<div style='font-size:2vh;font-weight:bold;padding-left:1vh;' data-valuectrl='dashboard.fullname'></div>	
+							<div style='padding-left:1vh;' data-valuectrl='dashboard.position'></div>
+						</div>
+						<div style='width:25%;float:left;' >
+							<!--<img id='dashboard-profpic' src="sources/images/prof.jpg" style='width:100%;'  alt="Logo" >-->
+							<div>Today Is : <span data-valuectrl='dashboard.datetoday'></span></div>
+							<div> <span data-valuectrl='dashboard.timern'></span></div>
+						</div>
+						
+						<div style='clear:both;'></div>
+					</div>
+					<div style='padding-top:1%;'>
+						<div style='width:25%;float:left;padding: 1%; '>
+							<div class="card" style=''>
+							  <div class="card-header" style='font-size:1.5vh;'>
+								Transactions 
+							  </div>
+							  <div class="card-body">
+								<div data-valuectrl='dashboard.transactions' style="font-size:7vh;text-align:center;font-weight:bold;color:#004eff;;">0</div>
+							  </div>
+							</div>
+						</div>
+						<div style='width:25%;float:left; padding: 1%;'>
+							<div class="card" style=''>
+							   <div class="card-header" style='font-size:1.5vh;'>
+								No. Of Products
+							  </div>
+							  <div class="card-body">
+								<div data-valuectrl='dashboard.noitems' style="font-size:7vh;text-align:center;font-weight:bold;color:#004eff;;">0</div>	
+							  </div>
+							</div>
+						</div>
+						<div style='width:25%;float:left; padding: 1%;'>
+							<div class="card" style=''>
+							  <div class="card-header" style='font-size:1.5vh;'>
+								Expired Products
+							  </div>
+							  <div class="card-body">
+								<div data-valuectrl='dashboard.expireditems' style="font-size:7vh;text-align:center;font-weight:bold;color:#ff0000;;">0</div>
+							  </div>
+							</div>
+						</div>
+						<div style='width:25%;float:left; padding: 1%;'>
+							<div class="card" style=''>
+							   <div class="card-header" style='font-size:1.5vh;'>
+								 Alert Qty Products
+							  </div>
+							  <div class="card-body">
+								<div data-valuectrl='dashboard.alertqty' style="font-size:7vh;text-align:center;font-weight:bold;color:#ff0000;;">0</div>
+							  </div>	
+							</div>
+						</div>
+					</div>
+					<div style="margin-top:17%;height:300px">
+						<div style='width:50%;float:left; height:100%;padding: 1%;'>
+							<div class="card" style='height:100%;'>
+							  <div class="card-header" style='font-size:1.5vh;'>
+								TOP Sales by Amount 
+							  </div>
+							  <div id="top-5-amount" class="card-body" style='overflow:auto;'>
+							  </div>
+							</div>
+						</div>
+						
+						<div style='width:50%;float:left;height:100%;padding: 1%;'>
+							<div class="card" style='height:100%;'>
+							   <div class="card-header" style='font-size:1.5vh;'>
+								TOP Sales  by Quantity 
+							  </div>
+							  <div id="top-5-quantity" class="card-body" style='overflow:auto;'>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style='width:35%;float:left;padding-left:1%;height:100%;'>
+					<div class="card" style='height:100%;'>
+					  <div class="card-header">
+						Latest Activity
+					  </div>
+					  <div class="card-body" id='notifspanedashboard' style="max-height:100%;overflow-y:auto;">
+					  </div>
+					</div>	
+				</div>
+				<div style='clear:both;'></div>
+			</div>
+		</div>
+	</div>
+</div>

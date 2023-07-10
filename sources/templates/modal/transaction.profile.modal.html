@@ -1,0 +1,164 @@
+<div id='transaction-profile-tab' data-controller='transactionprofilecontroller'  >
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:auto;">
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content">
+			<div class="spm-heads">
+				Transaction Information
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-12'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-3'><span data-valuectrl='labels.docnum' >Document No.</span> <br><input data-event="transactionprofilecontroller.keyup.changefields" data-valuectrl='transactionProfile.DOC_ID' type='text' class='form-control'/></div>
+								<!--<div class='col-md-3'>Refference Doc ID 
+									<div class="input-group mb-3">
+									  <div class="input-group-prepend btnfrms" data-event='transactionprofilecontroller.click.viewref' >
+										<span class="input-group-text" id="basic-addon1"><i class='icon-search'></i></span>
+									  </div>
+									  <input type="text" data-event='transactionprofilecontroller.click.searchdoc' class="form-control" data-valuectrl='transactionProfile.REFFERENCE_DOC_ID' placeholder="REF. Document" aria-label="ref" aria-describedby="basic-addon1">
+									</div>							
+								</div>-->
+								<div class='col-md-3'>
+									Stock<br>
+									<select data-valuectrl='transactionProfile.STOCK_IN_OUT'  data-event='transactionprofilecontroller.change.changefields' type='text' class='form-control'>
+										<option value='1'>IN</option>
+										<option value='0'>OUT</option>
+									</select>
+								</div>
+								<div class='col-md-3'>Date Encode <br><input data-valuectrl='transactionProfile.DATE_ENCODED' type='date' class='form-control'/></div>
+								<div class='col-md-3'>Customer 
+									<!-- <div class="input-group mb-3">
+									  <div class="input-group-prepend btnfrms" data-event='transactionprofilecontroller.click.viewref' >
+										<span class="input-group-text" id="basic-addon1"><i class='icon-search'></i></span>
+									  </div> -->
+									  <input type="text"  data-event='transactionprofilecontroller.click.searchcust' class="form-control" data-valuectrl='transactionProfile.SUPPLIER_NAME' placeholder="ref" aria-label="ref" aria-describedby="basic-addon1">
+									<!-- </div> -->	
+								</div>
+								<div class='col-md-3'><br>Document Type <br>
+									<select data-valuectrl='transactionProfile.TYPE' data-event='transactionprofilecontroller.change.changeType' type='text' class='form-control'>
+										
+										<option value="Delivery">Delivery</option>
+										<option value="Return by Customer">Return from Customer</option>
+										<!--<option >Return Stocks</option>-->
+										<option value="Return to Supplier">Return to Supplier</option>
+										<option value="Replacement">Replacement Document</option>
+										<option value="Sales Invoice" disabled>Sales Invoice</option>
+										<!--<option value='Reversal'>Reversal</option>-->
+									</select>
+								</div>
+								<div class='col-md-3'><br>Status <br>
+									<select data-valuectrl='transactionProfile.STATUS' type='text' class='form-control'>
+										<option>Open</option>
+										<option>Close</option>
+										<option disabled>Cancelled</option>
+									</select>
+								</div>
+								<div class='col-md-3'><br><span data-valuectrl='labels.docdate'>Document Date </span><br><input data-valuectrl='transactionProfile.DOCUMENT_DATE' type='date' class='form-control'/></div>
+							</div>						
+						</div>						
+					</div>						
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content">
+			<div class="spm-heads">
+				Item Details
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					
+					<div class='col-md-12'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<!--<div class='col-md-4'>Item<br><input data-event='transactionprofile.click.searchItem' data-valuectrl='itemdetailspre.ITEM_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-2'>Unit<br><select data-event='transactionprofile.change.changeUnit'  id='item-details-unit' data-valuectrl='itemdetailspre.UNIT_NAME' type='text' class='form-control'></select></div>
+								<div class='col-md-1'>Quantity<br><input data-event='transactionprofile.keyup.changeQuantity' data-valuectrl='itemdetailspre.QUANTITY' type='text' class='form-control'/></div>
+								<div class='col-md-1'>Cost<br><input data-valuectrl='itemdetailspre.COST_PER_UNIT' type='text' class='form-control'/></div>
+								<div class='col-md-1'>Price<br><input data-valuectrl='itemdetailspre.SELLING_PRICE_PER_UNIT' type='text' class='form-control'/></div>
+								<div class='col-md-1'>Tot Cost<br><input data-valuectrl='itemdetailspre.TOTAL_COST' type='text' class='form-control'/></div>
+								<div class='col-md-1'>Tot Price<br><input data-valuectrl='itemdetailspre.TOTAL_PRICE' type='text' class='form-control'/></div>-->
+								<div class='col-md-5'><button class='btn btn-success'  data-event='transactionprofilecontroller.click.addItem'><b>+ Add Items to This Transaction </b></button></div>
+							</div>
+													
+						</div>
+											
+					</div>
+											
+				</div>
+
+				
+			</div>
+
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-12'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'>
+									<table class='table' id="item-details-trans-modal-unit-table">
+										<thead>
+											<tr>
+												<th style='width:22vh;'>Item</th>
+												<th style='width:18vh;'>Unit</th>
+												<!--<th style='width:20vh;'>LOT NO.</th>-->
+												<th >EXP. DATE</th>
+												<th>Deal</th>
+												<th>Regular</th>
+												<th>Qty.</th>
+												
+												<th>Cost/Item</th>
+												<th>Price/Item</th>
+												<th>Total Cost</th>
+												<th>Total Price</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>						
+						</div>					
+					</div>						
+				</div>	
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-12'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-4'>
+									Description <br>
+									<textarea data-valuectrl='transactionProfile.DESCRIPTION' class='form-control'></textarea>
+								</div>
+								<div class='col-md-3'>
+									Total Price <br>
+									<input disabled data-valuectrl='transactionProfile.TOTAL_PRICE' type='text' class='form-control' />
+								</div>
+								<div class='col-md-3'>
+									Total Cost <br>
+									<input disabled data-valuectrl='transactionProfile.TOTAL_COST' type='text' class='form-control' />
+								</div>
+								<div class='col-md-2'>
+									Warehouse <br>
+									<input disabled data-valuectrl='transactionProfile.WAREHOUSE_NAME' type='text' class='form-control' />
+								</div>
+							</div>						
+						</div>					
+					</div>						
+				</div>	
+			</div>
+		</div>
+		<br>
+		<br>	
+	</div>
+	<div style='float:right;margin-top:1vh;'>
+		<button type="button" class="btn btn-primary" data-event="transactionprofilecontroller.click.save">
+			<i class="icon-download"></i> Save</button>	
+		
+		<button type="button" class="btn btn-danger" data-event="transactionprofilecontroller.click.cancel">
+			<i class="icon-remove"></i> Cancel This Transaction</button>
+		
+	</div>
+</div>

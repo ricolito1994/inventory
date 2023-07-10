@@ -1,0 +1,101 @@
+<div class="modal fade modals-md" tabindex="-1" id="usersmodal" data-controller="usersmodal">
+	<div class="modal-dialog">
+		<div class="modal-content" style="height:80vh;overflow:hidden;">
+		  <!-- Modal Header -->
+		  <div class="modal-header basic">
+			<h4 class="modal-title">USER</h4>
+			<button type="button" class="close" data-event="mychurchmembermodal.click.onClose">&times;</button>
+		  </div>
+		  <!-- Modal body -->
+		  <div class="modal-body" style='height:70%;' >
+				<div class='row'  style="height:100%; overflow:hidden;">
+					<div class='col-md-3'>
+						<!--<input type='image' id='memprofpic' data-event='mychurchmembermodal.click.chooselogo' data-valuectrl='memberprofilepic'  style='width:100%;' />
+						<input id='member_current_profile_pic' data-valuectrl='uservars.member_current_profile_pic' data-event='mychurchmembermodal.change.churchprofpicchange' accept="image/png, image/gif, image/jpeg" type='file' style='display:none;' class='form-control' placeholder='choose your profile picture' />
+						-->
+						<img src='./sources/images/prof.jpg' style='width:100%;'  />
+						
+					</div>
+					<div class='col-md-9' style="height:100%; overflow:auto;">
+						<div class='row'>
+							<div class='col-md-4'>
+								Last Name <br>
+								<input data-valuectrl='uservars.LASTNAME' type='text' class='form-control' />
+							</div>
+							<div class='col-md-4'>
+								First Name <br>
+								<input data-valuectrl='uservars.FIRSTNAME' type='text' class='form-control' />
+							</div>
+							<div class='col-md-4'>
+								Middle Name <br>
+								<input data-valuectrl='uservars.MIDDLENAME' type='text' class='form-control' />
+							</div>
+						</div><br>
+						<div class='row'>
+							<div class='col-md-4'>
+								Username <br>
+								<input data-valuectrl='uservars.USERNAME' type='text' class='form-control' />
+							</div>
+							<div class='col-md-4'>
+								Password <br>
+								<input id='member-password' data-valuectrl='uservars.PASSWORD' type='password' data-event='usersmodal.click.showpw' class='form-control' />
+							</div>
+							<div class='col-md-4'>
+								Email <br>
+								<input data-valuectrl='uservars.EMAIL' type='email' class='form-control' />
+							</div>
+						</div><br>
+						
+						<div class='row'>
+							<div class='col-md-4'>
+								Contact No. <br>
+								<input data-valuectrl='uservars.CONTACT'  class='form-control' />
+							</div>
+							<div class='col-md-4'>
+								Position <br>
+								<select  data-valuectrl='uservars.POSITION' class='form-control' >
+									<option>Cashier</option>
+									<option>Pharmacy Assistant</option>
+									<option>Pharmacist</option>
+									<option>Manager</option>
+								</select>
+							</div>
+							<div class='col-md-4'>
+								Status <br>
+								<select  data-valuectrl='uservars.STATUS' class='form-control' >
+									<option>Active</option>
+									<option>Inactive</option>
+									
+								</select>
+							</div>
+							
+						</div><br>
+						<div class='row'>
+							
+							<div class='col-md-4'>
+								Designation <br>
+								<select  data-valuectrl='uservars.DESIGNATION' class='form-control' >
+									<option>Normal User</option>
+									<option>Admin</option>
+									
+								</select>
+							</div>
+							
+						</div><br>
+						
+					</div>
+				</div>
+			
+				<br>
+				
+		  </div>
+		  <!-- Modal footer -->
+		   <div class="modal-footer">
+			<button class="btn btn-primary" data-event="usersmodal.click.save">
+				<i class="icon-download"></i> Save</button>
+			<button class="btn btn-danger" data-event="usersmodal.click.onClose">
+				<i class="icon-remove"></i> Close</button>
+		  </div>
+		</div>
+	</div>
+</div>

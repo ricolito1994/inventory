@@ -1,0 +1,36 @@
+<div id="usersettings"   data-controller='usersettings' style='height:100%;overflow:hidden;'>
+	<div style='height:88%;'> 
+		<div><h5>User Settings</h5></div>
+		
+			<div class="dt-table-filter" >
+				<div class="col-md-12" style="border:1px solid #ccc; padding :1%;width:100%;">
+					<div class="row">
+						<div class="row col-md-7" id="dttablefilter">
+							<div class="col-sm-12">
+								<input type="text" class="form-control" data-valuectrl="search.requirement" placeholder="User" data-event="departmentsettings.keyup.changefilter" />
+							</div>
+							
+						</div>
+						<div class="row col-md-5 action-buttons">
+							<button data-event="datatable.click.destroyTable" class="btn btn-warning">
+								<b><i class="icon-refresh"></i> Refresh Table</b>
+							</button>&nbsp;
+							
+							<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<b><i class="icon-caret-down"></i> Actions</b>
+							</button>&nbsp;
+							<div class="dropdown-menu" id="dt-dp-actions">
+								<a data-event="usersettings.click.openUser" href="javascript:void(0);" class="dropdown-item"><b><i class='icon-file'></i> New User</b></a>
+								<!--<a data-event="usersettings.click.upload" href="javascript:void(0);" class="dropdown-item"><b><i class='icon-upload-alt'></i> Import Excel File</b></a>
+								<a data-event="usersettings.click.download" href="javascript:void(0);" class="dropdown-item"><b><i class='icon-download-alt'></i> Download Template File</b></a>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height:100%;" class="requirementtablesettings">
+				<div id="dt-table"></div>
+			</div>
+		
+	</div>
+</div>

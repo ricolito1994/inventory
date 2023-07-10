@@ -1,0 +1,46 @@
+<div data-controller="warehouse" class="container-page warehouse">
+	<div class="container-page-container">
+		<div class="heading">
+			Warehouse
+		</div>
+		<div class="content" style="overflow-y:hidden">
+			<div class="dt-table-filter" >
+				<div class="col-md-12" style="border:1px solid #ccc; padding :1%;width:100%;">
+					<div class="row">
+						<div class="row col-md-7" id="dttablefilter">
+							<div class="col-sm-6">
+								<input type="text" class="form-control" data-valuectrl="warehouse.warehousename" placeholder="Enter warehouse name..." data-event="warehouse.change.changefilter" />
+							</div>
+							<div class="col-sm-6">
+								<!--<select id='depts' type="text" class="form-control" data-valuectrl="employeeprofile.department" placeholder="Department" data-event="employeeprofile.change.changefilter" />
+								
+								</select>-->
+								
+								<input type='text' id='depts' type="text" class="form-control" data-valuectrl="warehouse.address" placeholder="Address" data-event="warehouse.change.changefilter" />
+								
+								
+							</div>
+							
+						</div>
+						<div class="row col-md-5 action-buttons">
+							<button data-event="datatable.click.destroyTable" class="btn btn-warning">
+								<b><i class="icon-refresh"></i> Refresh Table</b>
+							</button>&nbsp;
+							
+							<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<b><i class="icon-caret-down"></i> Actions</b>
+							</button>&nbsp;
+							<div class="dropdown-menu" id="dt-dp-actions">
+								<a data-event="warehouse.click.openwarehouse" href="javascript:void(0);" class="dropdown-item"><b>New Warehouse</b></a>
+								<a data-event="warehouse.click.allwarehouses" href="javascript:void(0);" class="dropdown-item"><b>All Warehouse</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height:100%;" class="item-masterdata-table">
+				<div id="dt-table"></div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div id='warehouse-profile-tab' data-controller='warehouseprofile'  >
+	
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:auto;">
+		<div id='general-information' data-idlink='gen-info' class="spm-panels scroll-content">
+			<div class="spm-heads">
+				Warehouse Information
+			</div>
+			<div class="spm-content">
+				<div class='row'>
+					<div class='col-md-2'>
+						<img data-valuectrl='warehouseprofile.IMG' id='profilepic' style='width:100%;border:1px solid #ccc;'><br>
+						
+					</div>
+					<div class='col-md-10'>
+						<div  style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'>Warehouse Name</em></div>
+								<div class='col-md-4'>Supplier No. <br><input data-valuectrl='warehouseprofile.WAREHOUSE_CODE' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Item Name <br><input data-valuectrl='warehouseprofile.WAREHOUSE_NAME' type='text' class='form-control'/></div>
+								<div class='col-md-4'>Account Code <br><input data-valuectrl='warehouseprofile.ACCOUNT_CODE' type='text' class='form-control'/></div>
+								<div class='col-md-4'><br>Description <br><textarea style='resize:none;height:15vh;' data-valuectrl='warehouseprofile.DESCRIPTION' type='text' class='form-control'> </textarea></div>						
+								<div class='col-md-4'><br>Address <br><input data-valuectrl='warehouseprofile.ADDRESS' type='text' class='form-control'/></div>
+							</div>
+													
+						</div>
+						
+												
+					</div>
+											
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+			
+	</div>
+	<br>
+	<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemprofilecontroller.click.save">
+			<i class="icon-download"></i> Save</button>			
+		
+	</div>
+</div>

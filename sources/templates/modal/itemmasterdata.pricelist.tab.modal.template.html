@@ -1,0 +1,43 @@
+<div id='item-pricelist-tab' data-controller='itempricelistcontroller'  >
+	<div id='employeeprofile-panes'    style="height:65vh;max-height:65vh;border:1px solid #ccc;padding:1%;overflow-y:hidden;">
+		<div id='general-information' style="height:100%;" data-idlink='gen-info' class="spm-panels scroll-content" >
+			<div class="spm-heads">
+				Item Price List
+			</div>
+			<div class="spm-content" >
+				<div class='row'>
+					<div class='col-md-12' >
+						
+						<div style='border:1px solid #ccc;padding:1%;'>
+							<div class='row'>
+								<div class='col-md-12'><em style='font-size:2vh;'></em></div>
+								<div class='col-md-4' >Supplier <br><input data-event='itemstockcardcontroller.change.changefilter' data-valuectrl='supplierName' type='text' class='form-control'/></div>
+								<div class='col-md-4' > <br><button class='btn btn-warning'><i class="icon-refresh"></i> Reset</button> 
+									<!--<button class="btn btn-primary"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<b><i class="icon-caret-down"></i> Actions</b>
+									</button>&nbsp;
+									<div class="dropdown-menu" id="dt-dp-actions">
+										<a data-event="itemmasterdata.click.openitem" href="javascript:void(0);" class="dropdown-item"><b>New Price List</b></a>
+									</div>-->
+								</div>
+							</div>
+						</div>
+						<div style='border:1px solid #ccc;padding:1%;height:123%;'>
+							<div style="height:100%;" class="item-pricelist-table">
+								<div id="dt-table"></div>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>	
+	</div>
+	<br>
+	<div style='float:right;'>
+		<button type="button" class="btn btn-primary" data-event="itemstockcardcontroller.click.printStockCard">
+			<i class="icon-print"></i> Print Stock Card
+		</button>			
+	</div>
+</div>
