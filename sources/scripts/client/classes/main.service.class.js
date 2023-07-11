@@ -125,8 +125,8 @@ export class MainService {
 	socketON(){
 		if (!this.SocketClient){
 			//if (!this.SocketClient.isConnected){
-				this.SocketClient = new SocketClient ( 'ws://localhost:8090/socketserver/socket_route.php' , this );
-				this.SocketClient._onConnect();
+				//this.SocketClient = new SocketClient ( 'ws://localhost:8090/socketserver/socket_route.php' , this );
+				//this.SocketClient._onConnect();
 			//}
 		}
 		

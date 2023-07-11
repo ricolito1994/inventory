@@ -24,6 +24,8 @@ export class ItemMasterDataController extends Controller{
 		};	
 
 		
+		//this.displayCategory();
+		
 		
 		for (let i in this.itemmasterdata) {
 			let searchItem = localStorage.getItem(i);
@@ -34,8 +36,7 @@ export class ItemMasterDataController extends Controller{
 			}
 		}
 		
-		this.binds (controller,elem);
-		this.bindChildObject(this,false);
+		
 
 		this.dataTable = new DataTableService({
 			template : "/inventory/sources/templates/section/datatable.template.section.html",
@@ -452,11 +453,9 @@ export class ItemMasterDataController extends Controller{
 			],
 
 		});
-
-		
-		
+		this.binds (controller,elem);
+		this.bindChildObject(this,false);
 		this.initialize();
-
 	}
 
 	async displayCategory () {

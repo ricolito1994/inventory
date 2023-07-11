@@ -498,7 +498,7 @@ export class DashboardController extends Controller{
 	
 	
 	initialize(){
-		this.initWidgets();	
+		//this.initWidgets();	
 	}
 	
 	
