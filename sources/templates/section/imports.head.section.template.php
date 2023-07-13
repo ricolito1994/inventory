@@ -63,6 +63,7 @@ else
 <script defer type="text/javascript" src="<?php echo $prefix;?>sources/imports/scripts/redirect/redirect.js<?php echo $ver; ?>" ></script>
 <script defer type="text/javascript" src="<?php echo $prefix;?>sources/imports/scripts/bootstrap-4.0.0-beta.2/dist/js/bootstrap.min.js<?php echo $ver; ?>" ></script>
 <script defer type="text/javascript" src="<?php echo $prefix;?>sources/imports/scripts/bootstrap4/js/bootstrap.datepicker.js<?php echo $ver; ?>" ></script>
+<script defer type="text/javascript" src="<?php echo $prefix;?>sources/imports/scripts/json2xml/xml2json.js" ></script>
 
 <script defer type="module" src="<?php echo $prefix;?>sources/scripts/client/classes/socket.client.class.js" /></script>
 <script defer type="module" src="<?php echo $prefix;?>sources/scripts/client/start.js<?php echo $ver; ?>" /></script>

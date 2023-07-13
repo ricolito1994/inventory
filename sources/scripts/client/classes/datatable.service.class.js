@@ -22,6 +22,11 @@ export class DataTableService extends Controller{
 	setTableData ( data ){
 		this.tableContents = data;
 	}
+
+	setTableDataXML (xmlData, keyIterate) {
+		this.tableContentsXML = xmlData;
+		this.keyIterate = keyIterate;
+	}	
 	
 	setPaginateCtr ( paginateCtr ){
 		this.paginateCtr = paginateCtr;
@@ -45,7 +50,11 @@ export class DataTableService extends Controller{
 	
 	construct(){
 		//console.log(this.tableContents);
-		this.populate( 0 , this.paginateCtr , true );
+		if (!this.tableContentsXML)
+			this.populate( 0 , this.paginateCtr , true );
+		else{
+			this.populateAsXML();
+		}
 		$(`${this.parentDiv} #dtpaginate`).empty();
 		this.paginatePopulate();
 	}
@@ -96,7 +105,7 @@ export class DataTableService extends Controller{
 		for (  ; d < ed ; d++ ){
 			let selData = this.tableContents[d];
 			let tr = document.createElement("tr");
-			
+			if(!selData) continue;
 			
 			for ( let field in this.fields ){
 				let td = document.createElement("td");
@@ -117,6 +126,56 @@ export class DataTableService extends Controller{
 		
 		//console.log( this.table );
 	}
+
+	populateAsXML( ) {
+		if ( this.table.getElementsByTagName( 'tbody' ).length > 0 ){
+			//console.log("wew");
+			this.table.removeChild(this.table.getElementsByTagName( 'tbody' )[0]);
+		}
+		try{
+			const parser = new DOMParser();
+			const xmlDoc = parser.parseFromString(this.tableContentsXML, 'text/xml');
+			const rootElement = xmlDoc.documentElement;
+			const arr = []
+			const itr = 0;
+			this.iterateItems(rootElement, arr, itr);
+			//console.log(arr);
+			var filtered = arr.filter(function (el) {
+				return el != null;
+			});
+
+			this.tableContents = filtered;
+			this.populate(0 , this.paginateCtr , true);
+			//this.table.appendChild( tableBody );
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
+	iterateItems (element, arr, iteration) {
+		
+		for (let i = 0 ; i < element.childNodes.length ; i++) {
+			const node = element.childNodes[i];
+			if (node.nodeType === Node.ELEMENT_NODE) {
+				let tr = document.createElement("tr");
+				
+				if (node.nodeName == this.keyIterate)
+					iteration++;
+				
+				if(arr[iteration]) {
+					arr[iteration][node.nodeName] = node.textContent;
+				} else { 
+					arr[iteration]={} 
+				}
+
+
+				this.iterateItems(node, arr, iteration);
+			}
+		}
+		
+	}
+		
+
 	
 	paginatePopulate (){
 		let c = 0; 

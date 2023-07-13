@@ -26,7 +26,6 @@ export class ItemMasterDataController extends Controller{
 		
 		//this.displayCategory();
 		
-		
 		for (let i in this.itemmasterdata) {
 			let searchItem = localStorage.getItem(i);
 			if (!searchItem) {
@@ -36,6 +35,7 @@ export class ItemMasterDataController extends Controller{
 			}
 		}
 		
+		this.x2js = new X2JS();
 		
 
 		this.dataTable = new DataTableService({
@@ -172,7 +172,7 @@ export class ItemMasterDataController extends Controller{
 					]
 				},
 				{
-					head : "NAME",
+					head : "CATEGORY",
 					sort : {
 						asc : ['NAME'],
 						dsc : ['-NAME'],
@@ -185,7 +185,7 @@ export class ItemMasterDataController extends Controller{
 								{
 									attribute : "innerText",
 									value : ( selData ) => {
-										return selData['NAME'];
+										return selData['CATEGORY'];
 									},
 								}
 							]
@@ -458,6 +458,8 @@ export class ItemMasterDataController extends Controller{
 		this.initialize();
 	}
 
+	
+
 	async displayCategory () {
 		let categories = await this.getCategory();
 		let categorySelect = document.querySelector("#item-master-data-search-category")
@@ -680,7 +682,7 @@ export class ItemMasterDataController extends Controller{
 										ORDER BY lvl_qty desc , AAA desc */
 							//  ", ( SELECT SUM(QUANTITY) FROM inventory.ITEM_IN_WAREHOUSE AS AA WHERE ITEM_CODE = i.ITEM_CODE AND EXPIRY_DATE BETWEEN IF(EXPIRY_DATE = '0000-00-00',NULL,'0000-00-00') AND CURDATE() + INTERVAL 1 MONTH and ID = (SELECT MAX(ID) FROM inventory.ITEM_IN_WAREHOUSE WHERE ITEM_CODE = iiw.ITEM_CODE AND EXPIRY_DATE = AA.EXPIRY_DATE and IS_CANCELLED != 1 )  ) "+
 								 
-							sql : "SELECT i.ITEM_CODE IC,cat.NAME, i.ALERT_BEFORE_EXPIRY,i.ITEM_NAME, i.ITEM_IMAGE, u.*, i.ID idd,i.SUPPLIER_CODE SUPPLIER_CODE,s.SUPPLIER_NAME sup ,u.UNIT_NAME as UN,u.SELLING_PRICE_PER_UNIT price,iiw.TOTAL_QUANTITY AS T,IF(i.ALERT_QTY >= iiw.TOTAL_QUANTITY,'1','0') AS lvl_qty "+
+							sql : "SELECT i.ITEM_CODE IC,cat.NAME CATEGORY, i.ALERT_BEFORE_EXPIRY,i.ITEM_NAME, i.ITEM_IMAGE, u.*, i.ID idd,i.SUPPLIER_CODE SUPPLIER_CODE,s.SUPPLIER_NAME sup ,u.UNIT_NAME as UN,u.SELLING_PRICE_PER_UNIT price,iiw.TOTAL_QUANTITY AS T,IF(i.ALERT_QTY >= iiw.TOTAL_QUANTITY,'1','0') AS lvl_qty "+
 								  //", ( SELECT SUM(QUANTITY) FROM inventory.ITEM_IN_WAREHOUSE AS AA WHERE ITEM_CODE = i.ITEM_CODE AND EXPIRY_DATE BETWEEN IF(EXPIRY_DATE = '0000-00-00',NULL,'0000-00-00') AND CURDATE() + INTERVAL i.ALERT_BEFORE_EXPIRY MONTH and ID = (SELECT MAX(ID) FROM inventory.ITEM_IN_WAREHOUSE WHERE ITEM_CODE = iiw.ITEM_CODE AND EXPIRY_DATE = AA.EXPIRY_DATE and IS_CANCELLED != 1 )  ) "+
 								  ",00 AS AAA "+
 								  "FROM inventory.item_master_data i INNER JOIN inventory.supplier s ON s.SUPPLIER_CODE = i.SUPPLIER_CODE "+
@@ -722,11 +724,26 @@ export class ItemMasterDataController extends Controller{
 			//console.log(res);
 			//setTimeout( ( ) => {
 				let profilesObject = (JSON.parse(res))['items'];
-				//console.log('re',profilesObject);
+
+				let newArray = {};
+
+				for (let i in profilesObject) {
+					let tmp = {};
+					for (let j in profilesObject[i]) {
+						tmp[j] = profilesObject[i][j];
+					}
+					newArray[`${i}`] =tmp;
+				}
+
+				let xmlItems = this.OBJtoXML({ITEMS:newArray});
+
 				let d = profilesObject.length >= 130 ? 130 : Math.round( profilesObject.length / 1 );
+
 				
 				this.dataTable.setTableData(profilesObject);
-				
+				this.dataTable.setTableDataXML(xmlItems, 'IC');
+				//this.dataTable.populateAsXML(xmlItems);
+				console.log(d)
 				this.dataTable.setPaginateCtr(d);
 				this.dataTable.construct();
 				load.onClose();
@@ -734,6 +751,30 @@ export class ItemMasterDataController extends Controller{
 		});
 	}
 	
+	OBJtoXML(obj) {
+		var xml = '';
+		for (var prop in obj) {
+			xml += "<" + prop + ">";
+			if(Array.isArray(obj[prop])) {
+				for (var array of obj[prop]) {
+	
+					// A real botch fix here
+					xml += "</" + prop + ">";
+					xml += "<" + prop + ">";
+	
+					xml += this.OBJtoXML(new Object(array));
+				}
+			} else if (typeof obj[prop] == "object") {
+				xml += this.OBJtoXML(new Object(obj[prop]));
+			} else {
+				xml += obj[prop];
+			}
+			xml += "</" + prop + ">";
+		}
+		var xml = xml.replace(/<\/?[0-9]{1,}>/g,'');
+		return xml
+	}
+
 	onUpdateItems(){
 		this.changefilter();
 	}
